@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – HUIZE SHOP</title>
+  <meta name="description" content="Contacte HUIZE SHOP : une question sur un article, une taille ou la livraison ? Écris-nous sur WhatsApp ou prépare ton message avec le formulaire.">
+
+  <!-- À ajouter plus tard : icône du site -->
+  <!-- <link rel="icon" href="images/favicon.png" type="image/png"> -->
+
+  <!-- À ajouter plus tard : métadonnées de partage social (Open Graph) -->
+  <!-- <meta property="og:title" content="HUIZE SHOP"> -->
+  <!-- <meta property="og:description" content="Ton style, ta signature."> -->
+  <!-- <meta property="og:image" content="images/hero-mode.jpg"> -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="page page--contact" id="top">
+
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner container">
+
+      <a class="brand" href="index.html" id="brand-link" aria-label="HUIZE SHOP – retour à l'accueil">
+        <!-- Remplacer par <img src="images/logo-huize-shop.png" alt="HUIZE SHOP"> quand le logo sera prêt -->
+        <span class="brand__logo-placeholder" id="brand-logo">HUIZE SHOP</span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle__label">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Accueil</a></li>
+          <li><a class="main-nav__link" href="boutique.html">Boutique</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=chaussures">Chaussures</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=vetements">Vêtements</a></li>
+          <li><a class="main-nav__link" href="boutique.html?tri=nouveautes">Nouveautés</a></li>
+          <li><a class="main-nav__link" href="boutique.html?filtre=promotions">Promotions</a></li>
+          <li><a class="main-nav__link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-actions__link" id="search-link" href="boutique.html#recherche-produits">Rechercher</a>
+        <!-- Compte client : fonctionnalité à développer dans une future version -->
+        <a class="header-actions__link" id="account-link" href="#" aria-disabled="true">Mon compte</a>
+        <a class="header-actions__link header-actions__link--whatsapp" id="header-whatsapp-link"
+           href="#" data-whatsapp-link target="_blank" rel="noopener">WhatsApp</a>
+        <a class="header-actions__link header-actions__cart" id="cart-link" href="panier.html">
+          Panier <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== CONTENU PRINCIPAL ===================== -->
+  <main id="contenu-principal">
+
+    <!-- ---------- Contact ---------- -->
+    <section class="contact-page section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h1 class="section__title" id="contact-title">Contacte HUIZE SHOP</h1>
+
+        <p class="notice notice--info" id="contact-intro">
+          Une question sur un article, une taille, une pointure ou la livraison ?
+          Le plus simple est de nous écrire sur WhatsApp. Tu peux aussi remplir le formulaire :
+          il prépare ton message dans WhatsApp, que tu envoies toi-même.
+        </p>
+
+        <div class="contact-layout">
+
+          <!-- ----- Coordonnées de la boutique ----- -->
+          <div class="contact-info">
+
+            <article class="info-card" id="contact-whatsapp">
+              <h2 class="info-card__title">WhatsApp</h2>
+              <p class="info-card__text">
+                Numéro : <span data-whatsapp-number>[numéro à configurer]</span>
+              </p>
+              <p>
+                <a class="btn btn--primary" id="contact-whatsapp-button" href="#"
+                   data-whatsapp-link target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+              </p>
+            </article>
+
+            <!-- À compléter par le commerçant : remplace le texte entre crochets,
+                 puis supprime l'attribut data-placeholder de la ligne concernée. -->
+            <article class="info-card" id="contact-address">
+              <h2 class="info-card__title">Adresse de la boutique</h2>
+              <p class="info-card__text" data-placeholder>[À compléter : ville, quartier, repère connu]</p>
+            </article>
+
+            <article class="info-card" id="contact-phone">
+              <h2 class="info-card__title">Téléphone</h2>
+              <p class="info-card__text" data-placeholder>[À compléter : numéro d'appel, si différent du numéro WhatsApp]</p>
+            </article>
+
+            <article class="info-card" id="contact-hours">
+              <h2 class="info-card__title">Horaires de réponse</h2>
+              <p class="info-card__text" data-placeholder>[À compléter : jours et heures où le commerçant répond]</p>
+            </article>
+
+            <article class="info-card" id="contact-payment-delivery">
+              <h2 class="info-card__title">Paiement et livraison</h2>
+              <p class="info-card__text">
+                Le paiement et la livraison sont convenus avec le commerçant après la commande.
+                Les informations disponibles sont sur la page d'accueil :
+                <a href="index.html#paiement-livraison">Paiement et livraison</a>.
+                Ne communique jamais ton code PIN ou ton mot de passe.
+              </p>
+            </article>
+
+          </div>
+
+          <!-- ----- Formulaire ----- -->
+          <form class="contact-form" id="contact-form" novalidate aria-labelledby="contact-form-title">
+            <h2 class="contact-form__title" id="contact-form-title">Prépare ton message</h2>
+
+            <div class="contact-form__field">
+              <label class="field__label" for="contact-name">Ton nom</label>
+              <input class="field__input" type="text" id="contact-name" name="nom"
+                     autocomplete="name" maxlength="80" required>
+            </div>
+
+            <div class="contact-form__field">
+              <label class="field__label" for="contact-info">Ton numéro de téléphone ou ton e-mail</label>
+              <input class="field__input" type="text" id="contact-info" name="contact"
+                     maxlength="100" required placeholder="Ex. : +226 01 23 45 67">
+            </div>
+
+            <div class="contact-form__field">
+              <label class="field__label" for="contact-subject">Sujet</label>
+              <select class="field__select" id="contact-subject" name="sujet" required>
+                <option value="">Choisir un sujet</option>
+                <option>Question sur un article</option>
+                <option>Taille ou pointure</option>
+                <option>Disponibilité</option>
+                <option>Livraison</option>
+                <option>Paiement</option>
+                <option>Suivi de ma commande</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+
+            <div class="contact-form__field">
+              <label class="field__label" for="contact-message">Ton message</label>
+              <textarea class="field__input" id="contact-message" name="message" rows="6"
+                        maxlength="1000" required></textarea>
+            </div>
+
+            <p class="contact-form__note" id="contact-form-note">
+              Ce formulaire n'envoie pas d'e-mail et n'enregistre rien. Il ouvre WhatsApp avec
+              ton message prêt : il n'est transmis que lorsque tu appuies sur « Envoyer » dans WhatsApp.
+            </p>
+
+            <button class="btn btn--primary" type="submit" id="contact-submit">Préparer mon message WhatsApp</button>
+          </form>
+
+        </div>
+
+        <noscript>
+          <p class="notice notice--info">
+            JavaScript est nécessaire pour utiliser le formulaire. Tu peux toujours nous écrire
+            directement sur WhatsApp.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIED DE PAGE ===================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-footer__inner container">
+
+      <section class="site-footer__brand" aria-labelledby="footer-brand-title">
+        <h2 class="site-footer__brand-name" id="footer-brand-title">HUIZE SHOP</h2>
+        <p class="site-footer__slogan">Ton style, ta signature</p>
+      </section>
+
+      <section class="site-footer__contact" aria-labelledby="footer-contact-title">
+        <h2 class="site-footer__title" id="footer-contact-title">Contact</h2>
+        <address class="site-footer__address">
+          <p data-placeholder>Adresse : [à compléter]</p>
+          <p data-placeholder>Téléphone : [à compléter]</p>
+          <p>WhatsApp :
+            <a id="footer-whatsapp-link" href="#" data-whatsapp-link target="_blank" rel="noopener">
+              <span id="whatsapp-number-display" data-whatsapp-number>[numéro à configurer]</span>
+            </a>
+          </p>
+        </address>
+        <p><a href="contact.html">Page de contact</a></p>
+      </section>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-categories-title">
+        <h2 class="site-footer__title" id="footer-categories-title">Catégories</h2>
+        <ul class="site-footer__list">
+          <li><a href="boutique.html?categorie=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a href="boutique.html?categorie=vetements">Vêtements</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-info-title">
+        <h2 class="site-footer__title" id="footer-info-title">Informations</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html#paiement-livraison">Paiement et livraison</a></li>
+          <!-- Pages à développer : mentions légales, confidentialité, CGV -->
+          <li><a href="#" aria-disabled="true">Mentions légales (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Politique de confidentialité (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Conditions générales de vente (à développer)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-social-title">
+        <h2 class="site-footer__title" id="footer-social-title">Réseaux sociaux</h2>
+        <ul class="site-footer__list">
+          <li><a href="#" id="social-facebook" aria-disabled="true">Facebook (lien à compléter)</a></li>
+          <li><a href="#" id="social-instagram" aria-disabled="true">Instagram (lien à compléter)</a></li>
+          <li><a href="#" id="social-tiktok" aria-disabled="true">TikTok (lien à compléter)</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <p class="site-footer__copyright container">
+      &copy; <span id="copyright-year"></span> HUIZE SHOP. Tous droits réservés.
+    </p>
+  </footer>
+
+</body>
+</html>

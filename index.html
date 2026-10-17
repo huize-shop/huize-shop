@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HUIZE SHOP – Chaussures, sandales et vêtements au Burkina Faso</title>
+  <meta name="description" content="HUIZE SHOP : ton style, ta signature. Chaussures, sandales et vêtements au Burkina Faso, prix en F CFA, commande simple via WhatsApp.">
+
+  <!-- À ajouter plus tard : icône du site -->
+  <!-- <link rel="icon" href="images/favicon.png" type="image/png"> -->
+
+  <!-- À ajouter plus tard : métadonnées de partage social (Open Graph) -->
+  <!-- <meta property="og:title" content="HUIZE SHOP"> -->
+  <!-- <meta property="og:description" content="Ton style, ta signature."> -->
+  <!-- <meta property="og:image" content="images/hero-mode.jpg"> -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="publicites.css">
+  <script src="app.js" defer></script>
+  <script src="publicites.js" defer></script>
+</head>
+<body class="page page--home" id="top">
+
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner container">
+
+      <a class="brand" href="index.html" id="brand-link" aria-label="HUIZE SHOP – retour à l'accueil">
+        <!-- Remplacer par <img src="images/logo-huize-shop.png" alt="HUIZE SHOP"> quand le logo sera prêt -->
+        <span class="brand__logo-placeholder" id="brand-logo">HUIZE SHOP</span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle__label">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html" aria-current="page">Accueil</a></li>
+          <li><a class="main-nav__link" href="boutique.html">Boutique</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=chaussures">Chaussures</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=vetements">Vêtements</a></li>
+          <li><a class="main-nav__link" href="boutique.html?tri=nouveautes">Nouveautés</a></li>
+          <li><a class="main-nav__link" href="boutique.html?filtre=promotions">Promotions</a></li>
+          <li><a class="main-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-actions__link" id="search-link" href="boutique.html#recherche-produits">Rechercher</a>
+        <!-- Compte client : fonctionnalité à développer dans une future version -->
+        <a class="header-actions__link" id="account-link" href="#" aria-disabled="true">Mon compte</a>
+        <a class="header-actions__link header-actions__link--whatsapp" id="header-whatsapp-link"
+           href="#" data-whatsapp-link target="_blank" rel="noopener">WhatsApp</a>
+        <a class="header-actions__link header-actions__cart" id="cart-link" href="panier.html">
+          Panier <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== CONTENU PRINCIPAL ===================== -->
+  <main id="contenu-principal">
+
+    <!-- ---------- Accueil / Hero ---------- -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__tagline">Ton style, ta signature.</p>
+          <h1 class="hero__title" id="hero-title">Affirme ton style avec HUIZE SHOP</h1>
+          <p class="hero__text">
+            Baskets, sandales et vêtements sélectionnés avec soin pour tous les jours
+            comme pour les grandes occasions. Choisis tes articles, puis commande
+            simplement via WhatsApp.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" id="hero-shop-button" href="boutique.html">Découvrir la boutique</a>
+            <a class="btn btn--secondary" id="hero-whatsapp-button" href="#"
+               data-whatsapp-link target="_blank" rel="noopener">Commander sur WhatsApp</a>
+          </div>
+        </div>
+        <figure class="hero__media">
+          <!-- Emplacement réservé : ajouter la photo professionnelle images/hero-mode.jpg -->
+          <img class="hero__image" src="images/hero-mode.jpg" width="800" height="1000"
+               alt="Mannequin portant une tenue élégante et des chaussures de la collection HUIZE SHOP">
+        </figure>
+      </div>
+    </section>
+
+
+
+    <!-- ---------- Espace publicitaire indépendant ---------- -->
+    <section class="ad-section" id="publicites" aria-labelledby="publicites-title">
+      <div class="container">
+        <div class="ad-section__heading">
+          <p class="ad-section__eyebrow">À découvrir</p>
+          <h2 id="publicites-title">Publicités et offres du moment</h2>
+          <p>Retrouve ici nos promotions, nos nouveautés et nos vidéos de présentation.</p>
+        </div>
+        <div class="ad-carousel" data-ad-carousel aria-roledescription="carrousel" aria-label="Publicités HUIZE SHOP">
+          <div class="ad-carousel__slides">
+            <article class="ad-slide is-active" data-ad-slide>
+              <img src="images/chaussures/LV2.svg" alt="Publicité HUIZE SHOP numéro 1" loading="lazy">
+              <div class="ad-slide__caption"><span>HUIZE SHOP</span><h3>Découvre nos offres</h3><a href="boutique.html" class="ad-slide__link">Voir la boutique</a></div>
+            </article>
+            <article class="ad-slide" data-ad-slide hidden>
+              <img src="images/publicites/promo-2.jpg" alt="Publicité HUIZE SHOP numéro 2" loading="lazy">
+              <div class="ad-slide__caption"><span>Ton style, ta signature</span><h3>Les nouveautés sont ici</h3><a href="boutique.html?tri=nouveautes" class="ad-slide__link">Découvrir</a></div>
+            </article>
+            <article class="ad-slide" data-ad-slide hidden>
+              <img src="images/publicites/promo-3.jpg" alt="Publicité HUIZE SHOP numéro 3" loading="lazy">
+              <div class="ad-slide__caption"><span>Offres spéciales</span><h3>Fais-toi plaisir</h3><a href="boutique.html?filtre=promotions" class="ad-slide__link">Voir les promotions</a></div>
+            </article>
+            <article class="ad-slide ad-slide--video" data-ad-slide hidden>
+              <video controls playsinline preload="metadata" poster="images/publicites/promo-1.jpg" aria-label="Vidéo publicitaire HUIZE SHOP">
+                <source src="images/publicites/video-promo.mp4" type="video/mp4">
+                Ton navigateur ne prend pas en charge la lecture vidéo.
+              </video>
+              <div class="ad-slide__caption"><span>En vidéo</span><h3>Découvre HUIZE SHOP</h3></div>
+            </article>
+          </div>
+          <button class="ad-carousel__arrow ad-carousel__arrow--prev" type="button" aria-label="Publicité précédente" data-ad-prev>‹</button>
+          <button class="ad-carousel__arrow ad-carousel__arrow--next" type="button" aria-label="Publicité suivante" data-ad-next>›</button>
+          <div class="ad-carousel__footer">
+            <div class="ad-carousel__dots" data-ad-dots aria-label="Choisir une publicité"></div>
+            <button class="ad-carousel__pause" type="button" data-ad-pause aria-pressed="false">Mettre en pause</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Catégories ---------- -->
+    <section class="categories section" id="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 class="section__title" id="categories-title">Explore nos catégories</h2>
+
+        <div class="categories__grid">
+
+         <article class="category-card category-card--chaussures" id="category-chaussures">
+            <!-- Emplacement réservé : images/chaussures/categorie-chaussures.jpg -->
+            <img class="category-card__image" src="images/chaussures/chaussure1.svg"
+                 width="600" height="450" loading="lazy"
+                 alt="Sélection de chaussures pour homme et femme">
+            <div class="category-card__body">
+              <h3 class="category-card__title">Baskets</h3>
+              <p class="category-card__text">Baskets, mocassins et chaussures de ville pour affirmer ta démarche.</p>
+              <a class="category-card__link" href="boutique.html?categorie=chaussures">Découvrir les Baskets</a>
+            </div>
+          </article>
+
+          <article class="category-card category-card--sandales" id="category-sandales">
+            <!-- Emplacement réservé : images/sandales/categorie-sandales.jpg -->
+            <img class="category-card__image" src="images/sandales/sandale1.svg"
+                 width="600" height="450" loading="lazy"
+                 alt="Sélection de sandales confortables">
+            <div class="category-card__body">
+              <h3 class="category-card__title">Sandales</h3>
+              <p class="category-card__text">Confort et légèreté pour affronter la chaleur avec élégance.</p>
+              <a class="category-card__link" href="boutique.html?categorie=sandales">Découvrir les sandales</a>
+            </div>
+          </article>
+
+          <article class="category-card category-card--vetements" id="category-vetements">
+            <!-- Emplacement réservé : images/vetements/categorie-vetements.jpg -->
+            <img class="category-card__image" src="images/vetement/vetement1.svg"
+                 width="600" height="450" loading="lazy"
+                 alt="Sélection de vêtements de mode">
+            <div class="category-card__body">
+              <h3 class="category-card__title">Vêtements</h3>
+              <p class="category-card__text">Des tenues modernes pour compléter ton style au quotidien.</p>
+              <a class="category-card__link" href="boutique.html?categorie=vetements">Découvrir les vêtements</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Catalogue ---------- -->
+    <section class="catalogue section" id="catalogue" aria-labelledby="catalogue-title">
+      <div class="container">
+        <h2 class="section__title" id="catalogue-title">Nos produits</h2>
+
+        <div class="catalogue__tools">
+
+          <div class="catalogue__filters" role="group" aria-label="Filtrer par catégorie">
+            <button class="filter-button is-active" type="button" id="filter-all" data-filter="all" aria-pressed="true">Tous</button>
+            <button class="filter-button" type="button" id="filter-chaussures" data-filter="chaussures" aria-pressed="false">Chaussures</button>
+            <button class="filter-button" type="button" id="filter-sandales" data-filter="sandales" aria-pressed="false">Sandales</button>
+            <button class="filter-button" type="button" id="filter-vetements" data-filter="vetements" aria-pressed="false">Vêtements</button>
+          </div>
+
+          <div class="catalogue__search">
+            <label class="field__label" for="product-search">Rechercher un produit</label>
+            <input class="field__input" type="search" id="product-search" name="recherche"
+                   placeholder="Ex. : baskets, robe, sandales">
+          </div>
+
+          <div class="catalogue__sort">
+            <label class="field__label" for="product-sort">Trier par</label>
+            <select class="field__select" id="product-sort" name="tri">
+              <option value="default">Sélection</option>
+              <option value="newest">Nouveautés</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Message affiché par JavaScript lorsqu'aucun produit ne correspond -->
+        <p class="catalogue__empty" id="catalogue-empty" role="status" hidden>
+          Aucun produit ne correspond à votre recherche.
+        </p>
+
+        <div class="product-grid" id="product-grid">
+
+          <!-- Produit 1 -->
+          <article class="product-card" id="product-card-p001" data-product-id="p001"
+                   data-category="chaussures" data-price="15000" data-new="true">
+            <img class="product-card__image" src="images/chaussures/puma-rose.jpg.jpg"
+                 width="400" height="400" loading="lazy"
+                 alt="Adidas Campus rose">
+            <div class="product-card__body">
+              <p class="product-card__category">Chaussures</p>
+              <h3 class="product-card__name">Baskets blanches classiques (exemple)</h3>
+              <p class="product-card__price">
+                <span class="price price--current">15 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p001">Pointure</label>
+                <select class="field__select" id="size-p001" name="pointure-p001">
+                  <option value="">Choisir</option>
+                  <option>39</option><option>40</option><option>41</option><option>42</option><option>43</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p001">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p001">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 2 -->
+          <article class="product-card" id="product-card-p002" data-product-id="p002"
+                   data-category="chaussures" data-price="" data-new="false">
+            <img class="product-card__image" src="images/chaussures/NB1.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="New balance 2000">
+            <div class="product-card__body">
+              <p class="product-card__category">Chaussures</p>
+              <h3 class="product-card__name">New balance 2000</h3>
+              <p class="product-card__price">
+                <span class="price price--current">18 000 F CFA</span>
+                <span class="price price--old"><del></del></span>
+                <span class="price price--promo"></span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p002">Pointure</label>
+                <select class="field__select" id="size-p002" name="pointure-p002">
+                  <option value="">Choisir</option>
+                  <option>40</option><option>41</option><option>42</option><option>43</option><option>44</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p002">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p002">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 3 -->
+          <article class="product-card" id="product-card-p003" data-product-id="p003"
+                   data-category="chaussures" data-price="18000" data-new="true">
+            <img class="product-card__image" src="images/chaussures/LV.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="Louis Vuitton Runner Tactic">
+            <div class="product-card__body">
+              <p class="product-card__category">Chaussures</p>
+              <h3 class="product-card__name">Louis Vuitton Runner Tactic</h3>
+              <p class="product-card__price">
+                <span class="price price--current">18 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--limited">Stock limité</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p003">Pointure</label>
+                <select class="field__select" id="size-p003" name="pointure-p003">
+                  <option value="">Choisir</option>
+                  <option>38</option><option>39</option><option>40</option><option>41</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p003">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p003">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 4 -->
+          <article class="product-card" id="product-card-p004" data-product-id="p004"
+                   data-category="chaussures" data-price="15000" data-new="false">
+            <img class="product-card__image" src="images/chaussures/JORDAN 1.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="Air Jordan 4">
+            <div class="product-card__body">
+              <p class="product-card__category">chaussures</p>
+              <h3 class="product-card__name">Air Jordan 4</h3>
+              <p class="product-card__price">
+                <span class="price price--current">15 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p004">Pointure</label>
+                <select class="field__select" id="size-p004" name="pointure-p004">
+                  <option value="">Choisir</option>
+                  <option>36</option><option>37</option><option>38</option><option>39</option><option>40</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p004">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p004">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 5 -->
+          <article class="product-card" id="product-card-p005" data-product-id="p005"
+                   data-category="chaussures" data-price="14000" data-new="true">
+            <img class="product-card__image" src="images/chaussures/BCS.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="Baskets Chunky Streetwear">
+            <div class="product-card__body">
+              <p class="product-card__category">Chaussures</p>
+              <h3 class="product-card__name">Sneakers Chunky Streetwear "Durian Sole"</h3>
+              <p class="product-card__price">
+                <span class="price price--current">14 000 F CFA</span>
+                <span class="price price--old"><del></del></span>
+                <span class="price price--promo"></span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p005">Pointure</label>
+                <select class="field__select" id="size-p005" name="pointure-p005">
+                  <option value="">Choisir</option>
+                  <option>41</option><option>42</option><option>43</option><option>44</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p005">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p005">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 6 -->
+          <article class="product-card" id="product-card-p006" data-product-id="p006"
+                   data-category="chaussures" data-price="14000" data-new="true">
+            <img class="product-card__image" src="images/chaussures/ogiy.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="Sneakers Chunky OGIY™">
+            <div class="product-card__body">
+              <p class="product-card__category">Vêtements</p>
+              <h3 class="product-card__name">Sneakers Chunky OGIY™</h3>
+              <p class="product-card__price">
+                <span class="price price--current">14 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p006">Pointure</label>
+                <select class="field__select" id="size-p006" name="Pointure">
+                  <option value="">Choisir</option>
+                  <option>41</option><option>42</option><option>43</option><option>45</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p006">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p006">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 7 -->
+          <article class="product-card" id="product-card-p007" data-product-id="p007"
+                   data-category="chaussures" data-price="14000" data-new="false">
+            <img class="product-card__image" src="images/chaussures/Sneaker urbaine.svg"
+                 width="400" height="400" loading="lazy"
+                 alt="Sneakers Urban Blue &amp; White, bleu et blanc">
+            <div class="product-card__body">
+              <p class="product-card__category">Baskets</p>
+              <h3 class="product-card__name">Sneakers Urban Blue &amp; White</h3>
+              <p class="product-card__price">
+                <span class="price price--current">14 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p007">Pointure</label>
+                <select class="field__select" id="size-p007" name="pointure-p007">
+                  <option value="">Choisir</option>
+                  <option>36</option><option>37</option><option>38</option><option>39</option><option>40</option>
+                  <option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p007">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p007">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 8 -->
+          <article class="product-card" id="product-card-p008" data-product-id="p008"
+                   data-category="chaussures" data-price="14000" data-new="true">
+            <img class="product-card__image" src="images/chaussures/sneakers-chunky-air-blanc.png"
+                 width="400" height="400" loading="lazy"
+                 alt="Sneakers chunky blanches à semelle sculptée">
+            <div class="product-card__body">
+              <p class="product-card__category">Baskets</p>
+              <h3 class="product-card__name">Sneakers Chunky Air Blanc</h3>
+              <p class="product-card__price">
+                <span class="price price--current">14 000 F CFA</span>
+              </p>
+              <p class="product-card__availability availability availability--in-stock">En stock</p>
+              <div class="product-card__sizes">
+                <label class="field__label" for="size-p008">Pointure</label>
+                <select class="field__select" id="size-p008" name="pointure-p008">
+                  <option value="">Choisir</option>
+                  <option>36</option><option>37</option><option>38</option><option>39</option><option>40</option>
+                  <option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option>
+                </select>
+              </div>
+              <div class="product-card__actions">
+                <a class="btn btn--outline" href="produit.html?id=p008">Voir le produit</a>
+                <button class="btn btn--primary add-to-cart" type="button" data-product-id="p008">Ajouter au panier</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="catalogue__more">
+          <a class="btn btn--outline" href="boutique.html">Voir toute la boutique</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ---------- Réassurance ---------- -->
+    <section class="benefits section" id="avantages" aria-labelledby="benefits-title">
+      <div class="container">
+        <h2 class="section__title" id="benefits-title">Pourquoi choisir HUIZE SHOP ?</h2>
+
+        <ul class="benefits__list">
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"><!-- Icône à ajouter --></span>
+            <h3 class="benefit-card__title">Des informations produits claires</h3>
+            <p class="benefit-card__text">Pointures, tailles, couleurs et disponibilité indiquées sur chaque article.</p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"><!-- Icône à ajouter --></span>
+            <h3 class="benefit-card__title">Une commande simple</h3>
+            <p class="benefit-card__text">Prépare ton panier, puis envoie ta commande en quelques clics.</p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"><!-- Icône à ajouter --></span>
+            <h3 class="benefit-card__title">Un contact direct avec le commerçant</h3>
+            <p class="benefit-card__text">Pose tes questions et confirme ta commande directement sur WhatsApp.</p>
+          </li>
+          <li class="benefit-card">
+            <span class="benefit-card__icon" aria-hidden="true"><!-- Icône à ajouter --></span>
+            <h3 class="benefit-card__title">Des prix et une livraison transparents</h3>
+            <p class="benefit-card__text">Prix en F CFA et frais de livraison confirmés avant validation.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ---------- Paiement et livraison ---------- -->
+    <section class="payment-delivery section" id="paiement-livraison" aria-labelledby="payment-title">
+      <div class="container">
+        <h2 class="section__title" id="payment-title">Paiement et livraison</h2>
+        <p class="notice notice--info" id="payment-notice">
+          Informations à compléter par le commerçant. Aucun paiement en ligne automatique n'est
+          configuré : le paiement est convenu avec le commerçant après la commande.
+          Ne communique jamais ton code PIN ou ton mot de passe.
+        </p>
+
+        <div class="payment-delivery__grid">
+
+          <article class="info-card" id="payment-orange-money">
+            <h3 class="info-card__title">Orange Money</h3>
+            <p class="info-card__text" data-placeholder>[À compléter : option proposée ou non, numéro marchand]</p>
+          </article>
+
+          <article class="info-card" id="payment-moov-money">
+            <h3 class="info-card__title">Moov Money</h3>
+            <p class="info-card__text" data-placeholder>[À compléter : option proposée ou non, numéro marchand]</p>
+          </article>
+
+          <article class="info-card" id="payment-cash-on-delivery">
+            <h3 class="info-card__title">Paiement à la livraison</h3>
+            <p class="info-card__text" data-placeholder>[À compléter : uniquement si cette option est réellement proposée]</p>
+          </article>
+
+          <article class="info-card" id="payment-confirmation">
+            <h3 class="info-card__title">Confirmation du paiement</h3>
+            <p class="info-card__text" data-placeholder>[À compléter : comment le paiement est confirmé]</p>
+          </article>
+
+          <article class="info-card" id="delivery-info">
+            <h3 class="info-card__title">Frais et délais de livraison</h3>
+            <p class="info-card__text" data-placeholder>[À compléter : zones desservies, tarifs et délais]</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIED DE PAGE ===================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-footer__inner container">
+
+      <section class="site-footer__brand" aria-labelledby="footer-brand-title">
+        <h2 class="site-footer__brand-name" id="footer-brand-title">HUIZE SHOP</h2>
+        <p class="site-footer__slogan">Ton style, ta signature</p>
+      </section>
+
+      <section class="site-footer__contact" aria-labelledby="footer-contact-title">
+        <h2 class="site-footer__title" id="footer-contact-title">Contact</h2>
+        <address class="site-footer__address">
+          <p data-placeholder>Adresse : [à compléter]</p>
+          <p data-placeholder>Téléphone : [à compléter]</p>
+          <p>WhatsApp :
+            <a id="footer-whatsapp-link" href="#" data-whatsapp-link target="_blank" rel="noopener">
+              <span id="whatsapp-number-display" data-whatsapp-number>[numéro à configurer]</span>
+            </a>
+          </p>
+        </address>
+        <p><a href="contact.html">Page de contact</a></p>
+      </section>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-categories-title">
+        <h2 class="site-footer__title" id="footer-categories-title">Catégories</h2>
+        <ul class="site-footer__list">
+          <li><a href="boutique.html?categorie=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a href="boutique.html?categorie=vetements">Vêtements</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-info-title">
+        <h2 class="site-footer__title" id="footer-info-title">Informations</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html#paiement-livraison">Paiement et livraison</a></li>
+          <!-- Pages à développer : mentions légales, confidentialité, CGV -->
+          <li><a href="#" aria-disabled="true">Mentions légales (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Politique de confidentialité (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Conditions générales de vente (à développer)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-social-title">
+        <h2 class="site-footer__title" id="footer-social-title">Réseaux sociaux</h2>
+        <ul class="site-footer__list">
+          <li><a href="#" id="social-facebook" aria-disabled="true">Facebook (lien à compléter)</a></li>
+          <li><a href="#" id="social-instagram" aria-disabled="true">Instagram (lien à compléter)</a></li>
+          <li><a href="#" id="social-tiktok" aria-disabled="true">TikTok (lien à compléter)</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <p class="site-footer__copyright container">
+      &copy; <span id="copyright-year"></span> HUIZE SHOP. Tous droits réservés.
+    </p>
+  </footer>
+
+</body>
+</html>

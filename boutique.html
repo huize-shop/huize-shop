@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boutique – HUIZE SHOP | baskets, sandales et vêtements</title>
+  <meta name="description" content="La boutique HUIZE SHOP : baskets, sandales et vêtements au Burkina Faso. Prix en F CFA, commande simple via WhatsApp.">
+
+  <!-- À ajouter plus tard : icône du site -->
+  <!-- <link rel="icon" href="images/favicon.png" type="image/png"> -->
+
+  <!-- À ajouter plus tard : métadonnées de partage social (Open Graph) -->
+  <!-- <meta property="og:title" content="HUIZE SHOP"> -->
+  <!-- <meta property="og:description" content="Ton style, ta signature."> -->
+  <!-- <meta property="og:image" content="images/hero-mode.jpg"> -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="page page--shop" id="top">
+
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <!-- ===================== EN-TÊTE ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner container">
+
+      <a class="brand" href="index.html" id="brand-link" aria-label="HUIZE SHOP – retour à l'accueil">
+        <!-- Remplacer par <img src="images/logo-huize-shop.png" alt="HUIZE SHOP"> quand le logo sera prêt -->
+        <span class="brand__logo-placeholder" id="brand-logo">HUIZE SHOP</span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-expanded="false" aria-controls="main-nav">
+        <span class="menu-toggle__label">Menu</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Accueil</a></li>
+          <li><a class="main-nav__link" href="boutique.html" aria-current="page">Boutique</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=chaussures">Baskets</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a class="main-nav__link" href="boutique.html?categorie=vetements">Vêtements</a></li>
+          <li><a class="main-nav__link" href="boutique.html?tri=nouveautes">Nouveautés</a></li>
+          <li><a class="main-nav__link" href="boutique.html?filtre=promotions">Promotions</a></li>
+          <li><a class="main-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-actions__link" id="search-link" href="boutique.html#recherche-produits">Rechercher</a>
+        <!-- Compte client : fonctionnalité à développer dans une future version -->
+        <a class="header-actions__link" id="account-link" href="#" aria-disabled="true">Mon compte</a>
+        <a class="header-actions__link header-actions__link--whatsapp" id="header-whatsapp-link"
+           href="#" data-whatsapp-link target="_blank" rel="noopener">WhatsApp</a>
+        <a class="header-actions__link header-actions__cart" id="cart-link" href="panier.html">
+          Panier <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== CONTENU PRINCIPAL ===================== -->
+  <main id="contenu-principal">
+
+    <!-- ---------- Boutique ---------- -->
+    <section class="catalogue section" id="catalogue" aria-labelledby="catalogue-title">
+      <div class="container">
+        <h1 class="section__title" id="catalogue-title"> Bienvenue sur HUIZE SHOP</h1>
+
+        <div class="catalogue__tools">
+
+          <div class="catalogue__filters" role="group" aria-label="Filtrer par catégorie">
+            <button class="filter-button is-active" type="button" id="filter-all" data-filter="all" aria-pressed="true">Tous</button>
+            <button class="filter-button" type="button" id="filter-chaussures" data-filter="chaussures" aria-pressed="false">Baskets</button>
+            <button class="filter-button" type="button" id="filter-sandales" data-filter="sandales" aria-pressed="false">Sandales</button>
+            <button class="filter-button" type="button" id="filter-vetements" data-filter="vetements" aria-pressed="false">Vêtements</button>
+          </div>
+
+          <!-- L'identifiant "recherche-produits" correspond au lien « Rechercher » de l'en-tête -->
+          <div class="catalogue__search" id="recherche-produits">
+            <label class="field__label" for="product-search">Rechercher un produit</label>
+            <input class="field__input" type="search" id="product-search" name="recherche"
+                   placeholder="Ex. : baskets, robe, sandales">
+          </div>
+
+          <div class="catalogue__sort">
+            <label class="field__label" for="product-sort">Trier par</label>
+            <select class="field__select" id="product-sort" name="tri">
+              <option value="default">Sélection</option>
+              <option value="newest">Nouveautés</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix décroissant</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Message affiché par JavaScript lorsqu'aucun produit ne correspond -->
+        <p class="catalogue__empty" id="catalogue-empty" role="status" hidden>
+          Aucun produit ne correspond à votre recherche.
+        </p>
+
+        <!-- Grille volontairement vide : app.js la remplit avec la liste des produits -->
+        <div class="product-grid" id="product-grid"></div>
+
+        <noscript>
+          <p class="notice notice--info">
+            JavaScript est nécessaire pour afficher les produits. Active-le dans ton navigateur
+            ou contacte-nous directement sur WhatsApp.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIED DE PAGE ===================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-footer__inner container">
+
+      <section class="site-footer__brand" aria-labelledby="footer-brand-title">
+        <h2 class="site-footer__brand-name" id="footer-brand-title">HUIZE SHOP</h2>
+        <p class="site-footer__slogan">Ton style, ta signature</p>
+      </section>
+
+      <section class="site-footer__contact" aria-labelledby="footer-contact-title">
+        <h2 class="site-footer__title" id="footer-contact-title">Contact</h2>
+        <address class="site-footer__address">
+          <p data-placeholder>Adresse : [à compléter]</p>
+          <p data-placeholder>Téléphone : [à compléter]</p>
+          <p>WhatsApp :
+            <a id="footer-whatsapp-link" href="#" data-whatsapp-link target="_blank" rel="noopener">
+              <span id="whatsapp-number-display" data-whatsapp-number>[numéro à configurer]</span>
+            </a>
+          </p>
+        </address>
+        <p><a href="contact.html">Page de contact</a></p>
+      </section>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-categories-title">
+        <h2 class="site-footer__title" id="footer-categories-title">Catégories</h2>
+        <ul class="site-footer__list">
+          <li><a href="boutique.html?categorie=chaussures">Chaussures</a></li>
+          <li><a href="boutique.html?categorie=sandales">Sandales</a></li>
+          <li><a href="boutique.html?categorie=vetements">Vêtements</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-info-title">
+        <h2 class="site-footer__title" id="footer-info-title">Informations</h2>
+        <ul class="site-footer__list">
+          <li><a href="index.html#paiement-livraison">Paiement et livraison</a></li>
+          <!-- Pages à développer : mentions légales, confidentialité, CGV -->
+          <li><a href="#" aria-disabled="true">Mentions légales (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Politique de confidentialité (à développer)</a></li>
+          <li><a href="#" aria-disabled="true">Conditions générales de vente (à développer)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-labelledby="footer-social-title">
+        <h2 class="site-footer__title" id="footer-social-title">Réseaux sociaux</h2>
+        <ul class="site-footer__list">
+          <li><a href="#" id="social-facebook" aria-disabled="true">Facebook (lien à compléter)</a></li>
+          <li><a href="#" id="social-instagram" aria-disabled="true">Instagram (lien à compléter)</a></li>
+          <li><a href="#" id="social-tiktok" aria-disabled="true">TikTok (lien à compléter)</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <p class="site-footer__copyright container">
+      &copy; <span id="copyright-year"></span> HUIZE SHOP. Tous droits réservés.
+    </p>
+  </footer>
+
+</body>
+</html>
