@@ -125,6 +125,70 @@
   // Map = recherche par identifiant sûre (pas de risque avec des identifiants
   // bizarres venant de l'URL ou du navigateur).
   const produitsParId = new Map(PRODUITS.map(function (p) { return [p.id, p]; }));
+   
+  // CONNEXION SUPABASE
+  const SUPABASE_URL = "https://jvhdglhiinesgatfkpep.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_TIW2_k5wNvcopvzNdexdDA_dt-2TJwA";
+
+  const supabaseClient = window.supabase
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    : null;
+
+  async function chargerProduitsSupabase() {
+    if (!supabaseClient) {
+      console.warn("Supabase non chargé : catalogue de secours utilisé.");
+      return;
+    }
+
+    try {
+      const { data, error } = await supabaseClient
+        .from("products")
+        .select("*")
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      if (!data || data.length === 0) {
+        console.warn("Aucun produit dans Supabase : catalogue de secours utilisé.");
+        return;
+      }
+
+      const produitsSupabase = data.map(function (p) {
+        const categorie = String(p.category || "chaussures").toLowerCase();
+
+        return {
+          id: "sb-" + p.id,
+          nom: p.name,
+          categorie: categorie,
+          prix: Number(p.price_cfa) || 0,
+          ancienPrix: p.old_price_cfa == null ? null : Number(p.old_price_cfa),
+          description: p.description || "",
+          images: p.image_url
+            ? [{ src: p.image_url, alt: p.name }]
+            : [],
+          quantiteDisponible: Number(p.stock) || 0,
+          disponibilite: Number(p.stock) > 0 ? "in-stock" : "out-of-stock",
+          nouveau: false,
+          typeTaille: categorie === "vetements" ? "Taille" : "Pointure",
+          tailles: Array.isArray(p.sizes) ? p.sizes.map(String) : [],
+          couleurs: Array.isArray(p.colors) ? p.colors : [],
+          demo: false
+        };
+      });
+
+      PRODUITS.splice(0, PRODUITS.length, ...produitsSupabase);
+
+      produitsParId.clear();
+      PRODUITS.forEach(function (p) {
+        produitsParId.set(p.id, p);
+      });
+
+      console.log("Produits chargés depuis Supabase :", PRODUITS.length);
+    } catch (erreur) {
+      console.error("Erreur Supabase :", erreur);
+    }
+  }
+
 
   /* ===========================================================================
      3. OUTILS GÉNÉRAUX
@@ -1209,7 +1273,8 @@
     }
   }
 
-  function demarrer() {
+  async function demarrer() {
+  await chargerProduitsSupabase();
     executer("panier (chargement)", function () { panier = chargerPanier(); });
     executer("zone de messages", creerZoneMessage);
     executer("année", initialiserAnnee);
