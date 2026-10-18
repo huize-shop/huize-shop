@@ -1,0 +1,305 @@
+/* ==========================================================================
+   HUIZE SHOP – responsive.css
+   Adaptations aux écrans larges, tablettes et smartphones.
+   À charger APRÈS style.css.
+
+   Menu mobile : le JavaScript (à venir) devra ajouter la classe "js-menu"
+   sur <html> puis basculer la classe "is-open" sur #main-nav et la valeur
+   aria-expanded sur #menu-toggle. Tant que "js-menu" est absente, le menu
+   reste visible et utilisable, même sans JavaScript.
+   ========================================================================== */
+
+/* ---------- Écrans très larges (≥ 1400px) ---------- */
+@media (min-width: 1400px) {
+  :root {
+    --container-width: 1320px;
+  }
+}
+
+/* ---------- Petits ordinateurs (≤ 1100px) ---------- */
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-footer__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Libellé des actions raccourci pour libérer de la place */
+  .header-actions__link {
+    padding-inline: 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- Tablettes (≤ 900px) ---------- */
+@media (max-width: 900px) {
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  /* En-tête sur deux lignes : logo + actions, puis navigation */
+  .site-header__inner {
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    padding-block: var(--space-2);
+  }
+
+  .main-nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .main-nav__list {
+    justify-content: flex-start;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding-block: var(--space-6);
+  }
+
+  .hero__media {
+    max-height: 420px;
+    aspect-ratio: 16 / 11;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* La troisième carte occupe toute la largeur pour garder l'équilibre */
+  .category-card--vetements {
+    grid-column: 1 / -1;
+  }
+
+  .catalogue__tools {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .catalogue__filters {
+    grid-column: 1 / -1;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .payment-delivery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Smartphones (≤ 640px) ---------- */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .section {
+    padding-block: var(--space-6);
+  }
+
+  .section__title {
+    margin-bottom: var(--space-5);
+  }
+
+  /* En-tête : logo, puis actions compactes, menu en dessous */
+  .site-header__inner {
+    justify-content: space-between;
+  }
+
+  .brand__logo-placeholder {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+  }
+
+  .header-actions {
+    gap: var(--space-1);
+  }
+
+  /* Les libellés « Rechercher » et « Mon compte » restent présents
+     pour les lecteurs d'écran mais sont masqués visuellement. */
+  .header-actions__link:not(.header-actions__cart):not(.header-actions__link--whatsapp) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* Menu mobile : actif uniquement quand le JavaScript ajoute "js-menu" */
+  .js-menu .menu-toggle {
+    display: inline-flex;
+  }
+
+  .js-menu .main-nav {
+    display: none;
+  }
+
+  .js-menu .main-nav.is-open {
+    display: block;
+  }
+
+  .js-menu .main-nav__list {
+    flex-direction: column;
+    padding-bottom: var(--space-3);
+  }
+
+  .js-menu .main-nav__link {
+    width: 100%;
+    padding-inline: var(--space-3);
+  }
+
+  /* Sans JavaScript : les liens défilent dans leur propre bande horizontale,
+     sans faire défiler toute la page. */
+  html:not(.js-menu) .main-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html:not(.js-menu) .main-nav__list {
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  html:not(.js-menu) .main-nav__link {
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero__inner {
+    padding-block: var(--space-5);
+  }
+
+  .hero__content {
+    gap: var(--space-4);
+  }
+
+  .hero__text {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__media {
+    max-height: 320px;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Catégories : une colonne */
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card--vetements {
+    grid-column: auto;
+  }
+
+  .category-card__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Catalogue : outils empilés, produits sur deux colonnes */
+  .catalogue__tools {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+
+  .catalogue__filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: var(--space-1);
+  }
+
+  .filter-button {
+    flex-shrink: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .product-card__body {
+    padding: var(--space-3);
+  }
+
+  .product-card__name {
+    font-size: 0.95rem;
+  }
+
+  .price--current,
+  .price--promo {
+    font-size: 1.1rem;
+  }
+
+  .product-card__actions .btn {
+    min-height: 48px;
+    font-size: 0.9rem;
+  }
+
+  .benefits__list,
+  .payment-delivery__grid,
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__inner {
+    gap: var(--space-5);
+    padding-block: var(--space-6);
+  }
+}
+
+/* ---------- Très petits smartphones (≤ 380px) : produits en une colonne ---------- */
+@media (max-width: 380px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-actions__link--whatsapp {
+    font-size: 0.8rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+/* ---------- Écrans tactiles : zones confortables ---------- */
+@media (pointer: coarse) {
+  .main-nav__link,
+  .header-actions__link,
+  .filter-button,
+  .site-footer__list a {
+    min-height: 48px;
+  }
+}
+
+/* ---------- Mouvement réduit ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
