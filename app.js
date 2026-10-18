@@ -48,63 +48,63 @@
     {
       id: "p001", nom: " Adidas Campus rose", categorie: "chaussures",
       prix: 15000, ancienPrix: null, description: " Des baskets roses qui ne passent pas inapercues. Dessus d'aspect daim,trois bandes blanches, gros lacets et semelle épaisse pour un look streetwear tendance. A porter au quotidien avec un jean, une jupe ou un ensemble décontracté. Stock limité.",
-      images: [{ src: "images/chaussures/campus rose1.svg", alt: "Baskets rose" }],
+      images: [{ src: "images/chaussures/campus rose1.webp", alt: "Baskets rose" }],
       quantiteDisponible: null, disponibilite: "limited", nouveau: true,
       typeTaille: "Pointure", tailles: ["36", "37", "38", "39", "40", "41"], demo: true
     },
     {
       id: "p002", nom: "New balance 2000", categorie: "chaussures",
       prix: 18000, ancienPrix: null, description: "Affirmez votre style avec cette paire de New Balance ABZORB 2000 au coloris noir et argenté ultra-efficace. Directement inspiré du design running des années 2000, ce modèle mixe mesh respirant et empiècements géométriques pour un visuel fort et moderne.",
-      images: [{ src: "images/chaussures/NB1.svg", alt: "New Balance ABZORB 2000 au coloris noir et argenté" }],
+      images: [{ src: "images/chaussures/NB1.webp", alt: "New Balance ABZORB 2000 au coloris noir et argenté" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: false,
       typeTaille: "Pointure", tailles: ["40", "41", "42", "43", "44", "45"], demo: true
     },
     {
       id: "p003", nom: "Louis Vuitton Runner Tactic", categorie: "chaussures",
       prix: 18000, ancienPrix: null, description: "Paire de sneakers inspirée du modèle Runner Tatic de chez Louis Vuitton, arborant son look running rétro typique des années 90. La chaussure associe une base en maille respirante grise à des empiècements géométriques vert fluo, avec le logo initiales signature sur les côtés.",
-      images: [{ src: "images/chaussures/LV.svg", alt: "Baskets de sport couleur gris vert" }],
+      images: [{ src: "images/chaussures/LV.webp", alt: "Baskets de sport couleur gris vert" }],
       quantiteDisponible: null, disponibilite: "limited", nouveau: true,
       typeTaille: "Pointure", tailles: ["38", "39", "40", "41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p004", nom: "Air Jordan 4", categorie: "chaussures",
       prix: 15000, ancienPrix: null, description: "Affirme ton style avec l’Air Jordan 4 ! Un design tendance, une allure élégante et un look qui ne passe pas inaperçu. Parfaite pour compléter tes tenues avec une touche de fraîcheur et d’originalité.",
-      images: [{ src: "images/chaussures/JORDAN 1.svg", alt: "Air Jordan 4" }],
+      images: [{ src: "images/chaussures/JORDAN 1.webp", alt: "Air Jordan 4" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: false,
       typeTaille: "Pointure", tailles: ["38", "39", "40", "41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p005", nom: "Baskets Chunky Streetwear", categorie: "chaussures",
       prix: 14000, ancienPrix: null, description: "Affirmez votre style avec ces baskets maximalistes au design rétro-futuriste. Conçues pour les amateurs de streetwear audacieux, elles se démarquent par leur silhouette surdimensionnée et leurs détails uniques.Le modèle parfait pour rehausser instantanément vos tenues urbaines et décontractées.",
-      images: [{ src: "images/chaussures/BCS.svg", alt: "Baskets Chunky Streetwear" }],
+      images: [{ src: "images/chaussures/BCS.webp", alt: "Baskets Chunky Streetwear" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: true,
       typeTaille: "Pointure", tailles: ["41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p006", nom: "Sneakers Chunky OGIY™", categorie: "chaussures",
       prix: 14000, ancienPrix: null, description: "Affirmez votre style urbain avec la référence absolue du streetwear.Conçues pour ceux qui ne veulent pas choisir entre confort et esthétique, les baskets épaisses OGIY™ réinventent les codes de la mode urbaine. Avec leur silhouette chunky ultra-tendance, leur design monochrome noir intégral et leurs lacets XXL emblématiques, elles apportent une touche d'audace immédiate à toutes vos tenues.",
-      images: [{ src: "images/chaussures/ogiy.svg", alt: "Sneakers Chunky OGIY™" }],
+      images: [{ src: "images/chaussures/ogiy.webp", alt: "Sneakers Chunky OGIY™" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: true,
       typeTaille: "Pointure", tailles: ["41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p007", nom: "Sneakers Urban Bleu", categorie: "chaussures",
       prix: 14000, ancienPrix: null, description: "Apportez une touche de fraîcheur à vos tenues avec les Sneakers Urban Blue & White. Leur association de bleu et de blanc crée un style urbain facile à porter au quotidien.",
-      images: [{ src: "images/chaussures/Sneaker urbaine.svg", alt: "Sneakers Urban Blue & White" }],
+      images: [{ src: "images/chaussures/Sneaker urbaine.webp", alt: "Sneakers Urban Blue & White" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: false,
       typeTaille: "Pointure", tailles: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p008", nom: "Sneakers Chunky Air Blanc", categorie: "chaussures",
       prix: 14000, ancienPrix: null, description: "Affirmez votre style avec ces sneakers blanches au design chunky. Le mesh texturé, les empiècements superposés et la semelle sculptée aux inserts transparents leur donnent une allure urbaine audacieuse, facile à associer au quotidien.",
-      images: [{ src: "images/chaussures/sneakers-chunky-air-blanc.png", alt: "Sneakers chunky blanches à semelle sculptée" }],
+      images: [{ src: "images/chaussures/sneakers-chunky-air-blanc.webp", alt: "Sneakers chunky blanches à semelle sculptée" }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: true,
       typeTaille: "Pointure", tailles: ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"], demo: true
     },
     {
       id: "p009", nom: "Y-3", categorie: "sandales",
       prix: 15000, ancienPrix: null, description: DESCRIPTION_A_COMPLETER,
-      images: [{ src: "images/sandales/Y-3.jpg", alt: "chaussure pour homme mature " }],
+      images: [{ src: "images/sandales/Y-3.webp", alt: "chaussure pour homme mature " }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: true,
       typeTaille: "Taille", tailles: ["40", "41", "42", "43"], demo: true
     }
