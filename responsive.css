@@ -19,7 +19,7 @@
 /* ---------- Petits ordinateurs (≤ 1100px) ---------- */
 @media (max-width: 1100px) {
   .product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .site-footer__inner {
@@ -84,7 +84,7 @@
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .benefits__list {
@@ -240,27 +240,47 @@
     flex-shrink: 0;
   }
 
+  /* Deux produits par ligne sur tous les smartphones (320 px et plus) */
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-3);
   }
 
   .product-card__body {
-    padding: var(--space-3);
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3) var(--space-3);
   }
 
   .product-card__name {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 
   .price--current,
   .price--promo {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .price--promo {
+    padding-inline: 0.35rem;
+  }
+
+  .price--old {
+    font-size: 0.8rem;
+  }
+
+  .product-card__actions {
+    padding: 0 var(--space-3) var(--space-3);
   }
 
   .product-card__actions .btn {
-    min-height: 48px;
-    font-size: 0.9rem;
+    min-height: 44px;
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+  }
+
+  .product-card__badge {
+    font-size: 0.7rem;
   }
 
   .benefits__list,
@@ -275,10 +295,18 @@
   }
 }
 
-/* ---------- Très petits smartphones (≤ 380px) : produits en une colonne ---------- */
+/* ---------- Très petits smartphones (≤ 380px) : on reste sur deux colonnes, en plus compact ---------- */
 @media (max-width: 380px) {
+  .container {
+    padding-inline: var(--space-3);
+  }
+
   .product-grid {
-    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .product-card__name {
+    font-size: 0.85rem;
   }
 
   .header-actions__link--whatsapp {
