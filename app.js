@@ -132,7 +132,7 @@
    
   // CONNEXION SUPABASE
   const SUPABASE_URL = "https://jvhdglhiinesgatfkpep.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_TIW2_k5wNvcopvzNdexdDA_dt-2TJwA";
+  const SUPABASE_KEY = "sb_publishable_G7lqoQWxVmeukQ81kppyPw_xNuKXE1W"
 
   const supabaseClient = window.supabase
     ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
