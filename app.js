@@ -107,13 +107,6 @@
       images: [{ src: "images/sandales/Y-3.webp", alt: "chaussure pour homme mature " }],
       quantiteDisponible: null, disponibilite: "in-stock", nouveau: true,
       typeTaille: "Taille", tailles: ["40", "41", "42", "43"], demo: true
-    },
-    {
-      id: "p010", nom: "Y-3", categorie: "sandales",
-      prix: 15000, ancienPrix: null, description: DESCRIPTION_A_COMPLETER,
-      images: [{ src: "images/sandales/Y-3.webp", alt: "chaussure pour homme mature " }],
-      quantiteDisponible: , disponibilite: "", nouveau: true,
-      typeTaille: "Taille", tailles: ["40", "41", "42", "43"], demo: true
     } 
   ];
 
