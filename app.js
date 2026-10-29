@@ -23,6 +23,9 @@
      1. RÉGLAGES (à modifier ici si besoin)
      =========================================================================== */
   const CONFIG = {
+     // CONNEXION SUPABASE A APP.JS
+     SUPABASE_URL: "https://exzkingjjrkwnfwmxdyx.supabase.co",
+     SUPABASE_PUBLISHABLE_KEY: "sb_publishable_G7lqoQWxVmeukQ81kppyPw_xNuKXE1W",
     // Numéro WhatsApp au format international, chiffres uniquement (sans "+").
     WHATSAPP_NUMBER: "22653742748",
     // Nom sous lequel le panier est enregistré dans le navigateur.
