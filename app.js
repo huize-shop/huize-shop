@@ -47,7 +47,7 @@
      =========================================================================== */
   const DESCRIPTION_A_COMPLETER = "Description à compléter. Produit de démonstration.";
 
-  const PRODUITS = [
+  const PRODUITS_DEMO = [
     {
       id: "p001", nom: " Adidas Campus rose", categorie: "chaussures",
       prix: 15000, ancienPrix: null, description: " Des baskets roses qui ne passent pas inapercues. Dessus d'aspect daim,trois bandes blanches, gros lacets et semelle épaisse pour un look streetwear tendance. A porter au quotidien avec un jean, une jupe ou un ensemble décontracté. Stock limité.",
@@ -127,11 +127,130 @@
 
   // Map = recherche par identifiant sûre (pas de risque avec des identifiants
   // bizarres venant de l'URL ou du navigateur).
-  const produitsParId = new Map(PRODUITS.map(function (p) { return [p.id, p]; }));
+  let PRODUITS = PRODUITS_DEMO.slice();
+  let produitsparId = new Map(PRODUITS.map(function (p) {
+     return [p.id, p];
+  }));
 
+   // Charge le catalogue depuis Supabase.
+  async function chargerProduitsSupabase() {
+    try {
+      if (
+        !window.supabase ||
+        typeof window.supabase.createClient !== "function"
+      ) {
+        console.warn("[HUIZE SHOP] Supabase JS n'est pas chargé.");
+        return false;
+      }
+
+      if (
+        !CONFIG.SUPABASE_URL ||
+        !CONFIG.SUPABASE_PUBLISHABLE_KEY
+      ) {
+        console.warn("[HUIZE SHOP] Configuration Supabase manquante.");
+        return false;
+      }
+
+      const client = window.supabase.createClient(
+        CONFIG.SUPABASE_URL,
+        CONFIG.SUPABASE_PUBLISHABLE_KEY
+      );
+
+      const { data, error } = await client
+        .from("produits")
+        .select("*")
+        .eq("actif", true)
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        console.error("[HUIZE SHOP] Erreur Supabase :", error);
+        return false;
+      }
+
+      if (!Array.isArray(data) || data.length === 0) {
+        console.warn("[HUIZE SHOP] Aucun produit actif trouvé.");
+        return false;
+      }
+
+      const nouveauxProduits = data.map(function (p) {
+        let images = p.images;
+
+        if (typeof images === "string") {
+          try {
+            images = JSON.parse(images);
+          } catch (e) {
+            images = [];
+          }
+        }
+
+        if (!Array.isArray(images)) images = [];
+
+        images = images.map(function (image) {
+          if (typeof image === "string") {
+            return { src: image, alt: p.nom || "Produit HUIZE SHOP" };
+          }
+
+          return {
+            src: image.src || image.url || "",
+            alt: image.alt || p.nom || "Produit HUIZE SHOP"
+          };
+        }).filter(function (image) {
+          return image.src !== "";
+        });
+
+        return {
+          id: String(p.id),
+          nom: p.nom || "Produit sans nom",
+          categorie: p.categorie || "chaussures",
+          prix: Number(p.prix) || 0,
+          ancienPrix: p.ancien_prix == null
+            ? null
+            : Number(p.ancien_prix),
+          description: p.description || "",
+          images: images.length
+            ? images
+            : [{
+                src: "",
+                alt: p.nom || "Photo à venir"
+              }],
+          quantiteDisponible: p.quantite_disponible == null
+            ? null
+            : Number(p.quantite_disponible),
+          disponibilite: p.disponibilite || "in-stock",
+          nouveau: Boolean(p.nouveau),
+          typeTaille: p.type_taille || "Taille",
+          tailles: Array.isArray(p.tailles) ? p.tailles : []
+        };
+      });
+
+      PRODUITS = nouveauxProduits;
+
+      produitsParId = new Map(
+        PRODUITS.map(function (p) {
+          return [p.id, p];
+        })
+      );
+
+      console.info(
+        "[HUIZE SHOP] Catalogue Supabase chargé :",
+        PRODUITS.length,
+        "produits."
+      );
+
+      return true;
+
+    } catch (erreur) {
+      console.error(
+        "[HUIZE SHOP] Impossible de charger le catalogue :",
+        erreur
+      );
+      return false;
+    }
+  }
   /* ===========================================================================
      3. OUTILS GÉNÉRAUX
      =========================================================================== */
+   
   function $(selecteur, racine) {
     return (racine || document).querySelector(selecteur);
   }
@@ -1212,7 +1331,8 @@
     }
   }
 
-  function demarrer() {
+  async function demarrer() {
+     await chargerProduitsSupabase();
     executer("panier (chargement)", function () { panier = chargerPanier(); });
     executer("zone de messages", creerZoneMessage);
     executer("année", initialiserAnnee);
